@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B8BECF91891DEE70047F84C /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8BECF81891DEE70047F84C /* iPhoneStoryboard.storyboard */; };
 		6BACFA9C18919C3500D69154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BACFA9B18919C3500D69154 /* Foundation.framework */; };
 		6BACFA9E18919C3500D69154 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BACFA9D18919C3500D69154 /* CoreGraphics.framework */; };
 		6BACFAA018919C3500D69154 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BACFA9F18919C3500D69154 /* UIKit.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B8BECF81891DEE70047F84C /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		6BACFA9818919C3500D69154 /* Conway's Game of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Conway's Game of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BACFA9B18919C3500D69154 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6BACFA9D18919C3500D69154 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +117,7 @@
 				6BACFAAA18919C3500D69154 /* NAYAppDelegate.h */,
 				6BACFAAB18919C3500D69154 /* NAYAppDelegate.m */,
 				6BACFAAD18919C3500D69154 /* Main.storyboard */,
+				6B8BECF81891DEE70047F84C /* iPhoneStoryboard.storyboard */,
 				6BACFAB018919C3500D69154 /* NAYViewController.h */,
 				6BACFAB118919C3500D69154 /* NAYViewController.m */,
 				6BACFAB318919C3500D69154 /* Images.xcassets */,
@@ -231,6 +234,7 @@
 			files = (
 				6BACFAB418919C3500D69154 /* Images.xcassets in Resources */,
 				6BACFAA618919C3500D69154 /* InfoPlist.strings in Resources */,
+				6B8BECF91891DEE70047F84C /* iPhoneStoryboard.storyboard in Resources */,
 				6BACFAAF18919C3500D69154 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +389,7 @@
 				GCC_PREFIX_HEADER = "Conway's Game of Life/Conway's Game of Life-Prefix.pch";
 				INFOPLIST_FILE = "Conway's Game of Life/Conway's Game of Life-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -398,6 +403,7 @@
 				GCC_PREFIX_HEADER = "Conway's Game of Life/Conway's Game of Life-Prefix.pch";
 				INFOPLIST_FILE = "Conway's Game of Life/Conway's Game of Life-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -463,6 +469,7 @@
 				6BACFACC18919C3600D69154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BACFACD18919C3600D69154 /* Build configuration list for PBXNativeTarget "Conway's Game of LifeTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +478,7 @@
 				6BACFACF18919C3600D69154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

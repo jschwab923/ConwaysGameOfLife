@@ -9,10 +9,13 @@
 #import "NAYViewController.h"
 
 @interface NAYViewController ()
-@property (weak, nonatomic) IBOutlet UISwitch *setupSwitch;
+
 - (IBAction)createLife:(UISwitch *)sender;
+
+@property (weak, nonatomic) IBOutlet UISwitch *setupSwitch;
 @property (nonatomic) NSMutableArray *cells;
 @property (nonatomic) NSTimer *lifeTimer;
+
 @end
 
 @implementation NAYViewController
@@ -34,6 +37,7 @@
             
         }
     }
+    
     self.lifeTimer = [[NSTimer alloc] init];
     [self.view addSubview:gridContainer];
     gridContainer.center = self.view.center;
@@ -47,13 +51,10 @@
 
 - (void)cellSelected:(UIButton *)sender
 {
-    NSLog(@"%i",[self.cells indexOfObject:sender]);
     if([sender.backgroundColor isEqual:[UIColor blackColor]])
     {
         sender.backgroundColor = [UIColor lightGrayColor];
-    }
-    else
-    {
+    } else {
         sender.backgroundColor = [UIColor blackColor];
     }
     
@@ -63,10 +64,10 @@
 - (IBAction)createLife:(UISwitch *)sender
 {
     if (sender.isOn) {
-        self.lifeTimer = [NSTimer scheduledTimerWithTimeInterval:.1
-                                         target:self
-                                        selector:@selector(checkLandscape)
-                                       userInfo:nil repeats:YES];
+        self.lifeTimer = [NSTimer scheduledTimerWithTimeInterval:.2
+                                                          target:self
+                                                        selector:@selector(checkLandscape)
+                                                        userInfo:nil repeats:YES];
     } else {
         [self.lifeTimer invalidate];
         for (UIButton *cell in self.cells) {
@@ -103,7 +104,6 @@
             for (int i = 0; i < 3; i++) {
                 UIButton *currentNeighbor = [self.cells objectAtIndex:upperLeftNeighbors[i]];
                 if (currentNeighbor) {
-                    //NSLog(@"%i", [self.cells indexOfObject:currentNeighbor]);
                     if ([currentNeighbor.backgroundColor isEqual:[UIColor blackColor]]) {
                         liveNeighbors++;
                     }
@@ -114,7 +114,6 @@
             for (int i = 0; i < 3; i++) {
                 UIButton *currentNeighbor = [self.cells objectAtIndex:upperRightNeighbors[i]];
                 if (currentNeighbor) {
-                    //NSLog(@"%i", [self.cells indexOfObject:currentNeighbor]);
                     if ([currentNeighbor.backgroundColor isEqual:[UIColor blackColor]]) {
                         liveNeighbors++;
                     }
@@ -125,7 +124,6 @@
             for (int i = 0; i < 3; i++) {
                 UIButton *currentNeighbor = [self.cells objectAtIndex:lowerLeftNeighbors[i]];
                 if (currentNeighbor) {
-                    //NSLog(@"%i", [self.cells indexOfObject:currentNeighbor]);
                     if ([currentNeighbor.backgroundColor isEqual:[UIColor blackColor]]) {
                         liveNeighbors++;
                     }
@@ -136,7 +134,6 @@
             for (int i = 0; i < 3; i++) {
                 UIButton *currentNeighbor = [self.cells objectAtIndex:lowerRightNeighbors[i]];
                 if (currentNeighbor) {
-                    //NSLog(@"%i", [self.cells indexOfObject:currentNeighbor]);
                     if ([currentNeighbor.backgroundColor isEqual:[UIColor blackColor]]) {
                         liveNeighbors++;
                     }
@@ -147,7 +144,6 @@
             for (int i = 0; i < 5; i++) {
                 UIButton *currentNeighbor = [self.cells objectAtIndex:rightSideNeighbors[i]];
                 if (currentNeighbor) {
-                    //NSLog(@"%i", [self.cells indexOfObject:currentNeighbor]);
                     if ([currentNeighbor.backgroundColor isEqual:[UIColor blackColor]]) {
                         liveNeighbors++;
                     }
@@ -158,7 +154,6 @@
             for (int i = 0; i < 5; i++) {
                 UIButton *currentNeighbor = [self.cells objectAtIndex:leftSideNeighbors[i]];
                 if (currentNeighbor) {
-                    //NSLog(@"%i", [self.cells indexOfObject:currentNeighbor]);
                     if ([currentNeighbor.backgroundColor isEqual:[UIColor blackColor]]) {
                         liveNeighbors++;
                     }
@@ -169,7 +164,6 @@
             for (int i = 0; i < 5; i++) {
                 UIButton *currentNeighbor = [self.cells objectAtIndex:topNeighbors[i]];
                 if (currentNeighbor) {
-                    //NSLog(@"%i", [self.cells indexOfObject:currentNeighbor]);
                     if ([currentNeighbor.backgroundColor isEqual:[UIColor blackColor]]) {
                         liveNeighbors++;
                     }
@@ -195,7 +189,7 @@
                 }
             }
         }
-    
+        
         if ([currentCell.backgroundColor isEqual:[UIColor blackColor]]) { //live
             if (liveNeighbors == 0 || liveNeighbors == 1 || liveNeighbors > 3) {
                 int currentIndex = [self.cells indexOfObject:currentCell];
@@ -216,15 +210,15 @@
         if (cellsChanged[i]) {
             UIButton *changedCell = [self.cells objectAtIndex:i];
             if ([changedCell.backgroundColor isEqual:[UIColor blackColor]]) {
-                //[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    [changedCell setBackgroundColor:[UIColor lightGrayColor]];
-                    [changedCell setNeedsDisplay];
-                //}];
+                
+                [changedCell setBackgroundColor:[UIColor lightGrayColor]];
+                [changedCell setNeedsDisplay];
+                
             } else {
-                //[[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    [changedCell setBackgroundColor:[UIColor blackColor]];
-                    [changedCell setNeedsDisplay];
-                //}];
+                
+                [changedCell setBackgroundColor:[UIColor blackColor]];
+                [changedCell setNeedsDisplay];
+                
             }
         }
     }
